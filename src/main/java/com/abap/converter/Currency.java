@@ -1,12 +1,12 @@
-package com.abap.task;
+package com.abap.converter;
 
 public class Currency {
 
     private String numCode;
     private String charCode;
-    private Float nominal;
     private String name;
-    private Double value;
+    private Float nominal = 1.0f;
+    private Double value = 0.0;
 
     public String getNumCode() {
         return numCode;
@@ -55,4 +55,10 @@ public class Currency {
                 ", value=" + value +
                 '}';
     }
+
+    public double exchangeRateOneCurrencyToRub(){
+        return getValue()/getNominal();
+    }
+
+
 }
